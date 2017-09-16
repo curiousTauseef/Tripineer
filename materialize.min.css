@@ -1,0 +1,38 @@
+
+body {
+  font-family: 'Old Standard TT', serif;
+}
+
+
+.parallax-container {
+   height: 650px;
+ }
+ 
+#row-container {
+  padding-top: 50px;
+  width: 450px;
+}
+
+#banner {
+  height: 100px;
+}
+#logo-pic {
+  height: 100px;
+  padding-top: 10px;
+  padding-left: 80px;
+  padding-bottom: 5px;
+}
+#team {
+height: 50px;
+width: 50px;
+border-radius: 50%;
+
+}
+/*footer{
+  display: flex;
+}*/
+#list-team {
+display: flex;
+  flex-direction: row;
+}
+
