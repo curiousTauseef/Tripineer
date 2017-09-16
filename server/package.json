@@ -1,0 +1,31 @@
+{
+  "name": "Tripineer",
+  "version": "1.0.0",
+  "description": "Trip planning website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshnsaunders/Tripineer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshnsaunders/Tripineer/issues"
+  },
+  "homepage": "https://github.com/joshnsaunders/Tripineer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "knex": "^0.13.0",
+    "pg": "^7.3.0",
+    "pg-promise": "^6.5.4"
+  }
+}
