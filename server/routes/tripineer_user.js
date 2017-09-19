@@ -19,7 +19,7 @@ router.get('/tripineer_user/:id', function(request, response){
 
 router.post('/tripineer_user/', function(request, response){
   database('tripineer_user')
-    insert(request.body)
+    .insert(request.body)
     .then(function(data){
       console.log(data);
       response.send("we're da best.")
