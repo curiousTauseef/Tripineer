@@ -10,9 +10,11 @@
 </head>
 
 <body class=>
-  <nav class="#000000 black">
+  <nav class="nav">
     <div class="nav-wrapper">
       <img id="logo" src="image/tripineerPlainTextWhite.png" class="brand-logo">
+      <div id="nav-bar-location-search" class="search-location"></div>
+      <div id="nav-bar-activity-search" class="search-activity"></div>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a id="login" href="">Log In</a></li>
         <li><a id="createAccount" href="">Create account</a></li>
@@ -21,14 +23,31 @@
     </div>
   </nav>
   <main>
-    <div id="search-location" class="">Search Location
-      <input id="input-search-location" type="text" name="" value="">
+  <div class="cardDiv"></div>
+  <div class="cardData">hi</div>
+ <div class="preloader-wrapper big active">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
     </div>
-    <div id="input-name" class="">name
+  </div>
+</div>
+    <!-- <div id="initialSearch">Initial Search</div> -->
+    <div class="tripContainer">
+
+    </div>
+    <div class="search-location" class="">
+      <input id="input-search-location" type="text" name="" value="" required placeholder="Location">
+    </div>
+    <!-- <div id="input-name" class="">name
       <input id="input-first-name" type="text" name="" value="">
-    </div>
-    <div id="search-activity" class="">Search Activity
-      <input id="input-search-activity" type="text" name="" value="">
+    </div> -->
+    <div class="search-activity" class="">
+      <input id="input-search-activity" type="text" name="" value="" placeholder="activity">
       <a href="tripCards.html"></a>
     </div>
     <img id="main-pic" src="image/background3.png" alt="">
@@ -60,10 +79,26 @@
       </div>
     </div>
   </footer>
+  <script id="entry-template" type="text/x-handlebars-template">
+    {{#each businesses}}
+    <div class="row">
+      <div class="col s12 m6" id="cards">
+        <div class="card">
 
+          <img src="{{image_url}}">
+          <div class="card-content black-text">
+            <span class="card-title">{{name}}</span>
+            <p>{{rating}}</p>
+            <button><a class="waves-effect waves-light btn" href=""></a></button>
+          </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
-
