@@ -1,13 +1,60 @@
+body {
+  font-family: 'Old Standard TT', serif;
+}
+#logo {
+  padding-left: 50px;
+  padding-top: 10px;
+}
+#banner {
+  height: 100px;
+}
+#team {
+height: 50px;
+width: 50px;
+border-radius: 50%;
+}
+#list-team {
+display: flex;
+  flex-direction: row;
+}
+.brand-logo {
+  height: 50px;
+}
+#main-pic {
+  width: 100%;
+}
+#the-f-team {
+  padding-top: 30px;
+}
+#search-location {
+  position: absolute;
+  top: 40%;
+  left:60%;
+}
+#search-activity {
+  position: absolute;
+  top: 40%;
+  left:20%;
+}
+#input-search-activity {
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+#input-search-location {
+  border: 1px solid gray;
+  border-radius: 10px;
+}
 
+
+/*
 body {
   font-family: 'Old Standard TT', serif;
 }
 
-
 .parallax-container {
    height: 650px;
  }
- 
+
 #row-container {
   padding-top: 50px;
   width: 450px;
@@ -34,5 +81,4 @@ border-radius: 50%;
 #list-team {
 display: flex;
   flex-direction: row;
-}
-
+}*/
