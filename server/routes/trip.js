@@ -17,4 +17,13 @@ router.get('/trip/:id', function(request, response){
     })
 })
 
+router.post('/trip', function(request, response){
+  database('trip')
+  .insert(request.body)
+  .then(function(data){
+    console.log(data);
+    response.send("travelling yay!")
+  })
+})
+
 module.exports = router

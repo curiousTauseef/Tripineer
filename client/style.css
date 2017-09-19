@@ -2,11 +2,32 @@ body {
   font-family: 'Old Standard TT', serif;
 }
 #logo {
-  padding-left: 50px;
-  padding-top: 10px;
+  position:absolute;
+  top:10%;
+  left:45%;
+  /*padding-left: 50px;
+  padding-top: 10px;*/
+}
+::-webkit-input-placeholder {
+  color: black;
 }
 #banner {
   height: 100px;
+}
+.preloader-wrapper{
+  display:none;
+}
+.cardData{
+  display:none;
+  height:100px;
+  width:100px;
+}
+
+.cardDiv{
+  display:none;
+  height:50px;
+  width:50px;
+  background-color:white;
 }
 #team {
 height: 50px;
@@ -26,12 +47,12 @@ display: flex;
 #the-f-team {
   padding-top: 30px;
 }
-#search-location {
+.search-activity {
   position: absolute;
   top: 40%;
   left:60%;
 }
-#search-activity {
+.search-location {
   position: absolute;
   top: 40%;
   left:20%;
@@ -53,4 +74,7 @@ display: flex;
 #list-team {
 display: flex;
   flex-direction: row;
-}*/
+}
+.nav{
+  background-color: lightblue;
+}
