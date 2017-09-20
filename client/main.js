@@ -68,18 +68,18 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
 });
 
 
-$(document).ajaxStart(function() {
-  $(".preloader-wrapper").css({
-    'display':'block',
-    'position':'absolute',
-    'top':'45%',
-    'left':'45%',
-  });
-});
-$(document).ajaxComplete(function() {
-  $(".preloader-wrapper").css({
-      'display':'none'
-    })
+// $(document).ajaxStart(function() {
+//   $(".preloader-wrapper").css({
+//     'display':'block',
+//     'position':'absolute',
+//     'top':'45%',
+//     'left':'45%',
+//   });
+// });
+// $(document).ajaxComplete(function() {
+//   $(".preloader-wrapper").css({
+//       'display':'none'
+//     })
 //
 //     $('.cardDiv').css({
 //       'display':'grid',
