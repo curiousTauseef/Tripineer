@@ -29,7 +29,6 @@ window.addEventListener('load', function() {
 
   function logout() {
     localStorage.clear()
-    document.getElementById('lblUserName').innerHTML = "&#160;"
     document.getElementById('userImage').innerHTML = "&#160;"
     alert("Thanks for logging out!")
   }
@@ -61,7 +60,7 @@ window.addEventListener('load', function() {
       } else if (err) {
         console.log(err);
         alert(
-          'Error: ' + err.error + '. Check the console for further details.'
+          'Something went wrong, try logging in again.'
         );
       }
     });
@@ -87,8 +86,7 @@ window.addEventListener('load', function() {
   function displayProfile() {
     // display the profile
     console.log(userProfile)
-    document.getElementById('lblUserName').innerHTML = "Hello, " + userProfile.name
-    document.getElementById('userImage').innerHTML = "<img class='image-circle' src='" + userProfile.picture + "'>"
+    document.getElementById('userImage').innerHTML= "<img class='image-circle' src='" + userProfile.picture + "'>" + "Hello, " + userProfile.given_name
 
     var firstName = userProfile.given_name
     var lastName = userProfile.family_name
