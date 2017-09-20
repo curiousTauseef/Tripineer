@@ -1,10 +1,6 @@
 body {
   font-family: 'Old Standard TT', serif;
 }
-#logo {
-  padding-left: 50px;
-  padding-top: 10px;
-}
 #banner {
   height: 100px;
 }
@@ -53,4 +49,34 @@ display: flex;
 #list-team {
 display: flex;
   flex-direction: row;
-}*/
+}
+
+.nav-wrapper .dropdown-button {
+  padding-top: 15px;
+  width: 200px;
+  min-height: 55px;
+  height: 99%;
+}
+
+.nav-wrapper #lblUserName {
+  font-size: 20px;
+  font-family: courier, verdana, garamond;
+}
+
+.imgDiv {
+  float: right;
+  height: 65px;
+}
+
+.image-circle {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.nav-wrapper .logo {
+  min-width: 200px;
+  background-image: url(image/tripineerPlainTextWhite.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}

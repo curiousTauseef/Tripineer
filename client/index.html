@@ -9,24 +9,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body class=>
+<body>
   <nav class="#000000 black">
+
     <div class="nav-wrapper">
-      <img id="logo" src="image/tripineerPlainTextWhite.png" class="brand-logo">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a id="login" href="">Log In</a></li>
-        <li><a id="createAccount" href="">Create account</a></li>
-        <li><a id="espanol" href="">En Espanol</a></li>
+      <div class="row top-bar">
+        <div class="col s6 left logo">&#160;</div>
+        <div class="col s3" id="lblUserName">&#160;</div>
+        <div class="col s1 imgDiv" id="userImage">&#160;</div>
+        <div class="col s2">
+          <a class='dropdown-button btn right' data-activates='dropdown1'>Navigation</a>
+        </div>
+      </div>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a class="login">Log In</a></li>
+        <li class="divider"></li>
+        <li><a class="create">Create Account</a></li>
+        <li class="divider"></li>
+        <li><a class="logout">Logout</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">En Espa&#241;ol</a></li>
       </ul>
     </div>
+
   </nav>
   <main>
     <div id="search-location" class="">Search Location
       <input id="input-search-location" type="text" name="" value="">
     </div>
-    <div id="input-name" class="">name
+    <!-- <div id="input-name" class="">name
       <input id="input-first-name" type="text" name="" value="">
-    </div>
+    </div> -->
     <div id="search-activity" class="">Search Activity
       <input id="input-search-activity" type="text" name="" value="">
       <a href="tripCards.html"></a>
@@ -63,7 +76,11 @@
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://cdn.auth0.com/js/lock/10.20.0/lock.min.js"></script>
+  <script src="https://cdn.auth0.com/js/auth0/8.9/auth0.min.js"></script>
+  <script type="text/javascript" src="auth0variables.js"></script>
+  <script type="text/javascript" src="auth.js"></script>
   <script type="text/javascript" src="main.js"></script>
+
 </body>
 </html>
-
