@@ -103,7 +103,7 @@ window.addEventListener('load', function() {
     }
     console.log(tripineerUser);
     var emailArray = []
-    $.get('https://salty-island-62883.herokuapp.com/' + 'tripineer_user')
+    $.get('https://evening-dawn-29918.herokuapp.com/' + 'tripineer_user')
       .then(function(data) {
         // console.log(data);
         // email = email.toString()
@@ -118,7 +118,7 @@ window.addEventListener('load', function() {
       // console.log('you exist');
     } else {
       console.log("you don't exist");
-      $.post('https://salty-island-62883.herokuapp.com/' + 'tripineer_user/', tripineerUser)
+      $.post('https://evening-dawn-29918.herokuapp.com/' + 'tripineer_user/', tripineerUser)
         .then(result => {
           console.log(result);
         })
