@@ -17,4 +17,13 @@ router.get('/activity/:id', function(request, response){
     })
 })
 
+router.post('/activity', function(request, response){
+  database()
+  .insert(request.body)
+  .then(function(data){
+    console.log(data);
+    response.send("wrong one Josh, dummy")
+  })
+})
+
 module.exports = router
