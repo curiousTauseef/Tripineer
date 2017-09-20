@@ -2,6 +2,7 @@ const AuthKey = "Bearer 2Ly-4eOWIdU0p6M65l1EB_1jNjNgqIDf4XD9Vmmw727kvqIcrlYAQON-
 const url = "https://api.yelp.com/v3/"
 const corsURL = "https://cors-anywhere.herokuapp.com/"
 const apiURL = "https://salty-island-62883.herokuapp.com/"
+// import userProfile from './auth.js'
 
 $(() => {
   console.log('jQuery is connected!!!!!');
@@ -13,7 +14,6 @@ $(document).ready(function() {
 $("#espanol").click(function() {
   alert("We're' learning spanish still, be tune")
 })
-
 
 $("#input-search-activity, #input-search-location").keyup(function(event) {
   if (event.keyCode == 13) {
@@ -47,11 +47,17 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
           var html = template(context);
 
           $('.tripContainer').append(html)
+          $('.tripButton').on("click", function(event){
+            event.preventDefault();
+            // alert("click worked")
+            // var name = $(".card-Title").innerHTML()
+            var name = $(this).attr("data-name")
+            var rating = $(this).attr("data-rating")
+            var image = $(this).attr("data-img")
+            console.log(name, rating, image)
+          })
         }
       })
-
-
-
 
     }
     $('.search-location').css({
@@ -64,63 +70,22 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
     })
     $('#input-search-activity').val('')
     $('#input-search-location').val('')
-  }
+}
+
+
+
 });
 
 
-// $(document).ajaxStart(function() {
-//   $(".preloader-wrapper").css({
-//     'display':'block',
-//     'position':'absolute',
-//     'top':'45%',
-//     'left':'45%',
-//   });
-// });
-// $(document).ajaxComplete(function() {
-//   $(".preloader-wrapper").css({
-//       'display':'none'
-//     })
-//
-//     $('.cardDiv').css({
-//       'display':'grid',
-//       'border':'1px solid black',
-//       // 'z-index':'99',
-//     })
-//     $('.cardData').css({
-//       'display':'grid',
-//       'border':'1px solid black'
-//     })
-//
-//
-//     for (var i=0;i<5;i++){
-//     $('.cardDiv').appendTo(
-//       $('.cardData')
-//     )
-//     console.log("hi");
-//   }
-// });
+// console.log("almost there")
+// $('#buttons').on("click", function(event){
+//   event.preventDefault();
+//   alert("click worked")
+//   var name = $(".card-Title").text()
+//   console.log(name)
+// })
 
 
-
-
-
-
-$("#input-first-name").keyup(function(event) {
-  // var firstName = $("input-first-name").val()
-  if (event.keyCode == 13) {
-
-    event.preventDefault()
-    var firstName = $("#input-first-name").val();
-    console.log(firstName);
-    const postName = {
-      "first_name": firstName,
-    }
-    $.post(apiURL + "tripineer_user/", postName)
-      .then(result => {
-        console.log(result)
-      })
-  }
-})
 
 // $.post(apiURL + "activity", postActivity)
 //   .then(result => {

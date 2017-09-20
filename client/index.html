@@ -3,6 +3,7 @@
 
 <head>
   <title>Tripineer</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="style.css" media="screen,projection" />
@@ -92,11 +93,26 @@
   </footer>
   <script id="entry-template" type="text/x-handlebars-template">
     {{#each businesses}}
+
     <div class="row">
+    <div class="col s12 m3">
+      <div class="card blue-grey">
+        <div class="card-image">
+          <img class = "yelpImages" src="{{image_url}}">
+          <!-- <span class="card-title">{{name}}</span> -->
+          <a  data-rating="{{rating}}" data-name="{{name}}" data-img="{{image_url}}"class="btn-floating halfway-fab waves-effect waves-light red tripButton"><i class="material-icons">add</i></a>
+        </div>
+        <div data="{{name}}" class="card-title white-text">{{name}}</div>
+        <div data="{{rating}}" class="card-content white-text"> Rating: {{rating}}
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <div class="row">
       <div class="col s12 m6" id="cards">
         <div class="card">
-
-          <img src="{{image_url}}">
+            <div class="card-image">
+          <img  class= "yelpImages" src="{{image_url}}">
           <div class="card-content black-text">
             <span class="card-title">{{name}}</span>
             <p>{{rating}}</p>
@@ -104,7 +120,8 @@
           </div>
       </div>
     </div>
-  </div>
+    </div>
+  </div> -->
   {{/each}}
 </script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
