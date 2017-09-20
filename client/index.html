@@ -5,23 +5,24 @@
   <title>Tripineer</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="style.css" media="screen,projection" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body>
-  <nav class="#000000 black">
 
+<body>
+  <nav class="white">
     <div class="nav-wrapper">
       <div class="row top-bar">
-        <div class="col s6 left logo">&#160;</div>
-        <div class="col s3" id="lblUserName">&#160;</div>
-        <div class="col s1 imgDiv" id="userImage">&#160;</div>
-        <div class="col s2">
-          <a class='dropdown-button btn right' data-activates='dropdown1'>Navigation</a>
+        <div class="buttonDiv col s1 left">
+          <a class='dropdown-button btn orange lighten-1' data-activates='dropdown'><i class="material-icons">dehaze</i></a>
         </div>
+        <div class="col s7 imgDiv" id="userImage">&#160;</div>
+        <div class="col s4 logo">&#160;</div>
+
       </div>
-      <ul id='dropdown1' class='dropdown-content'>
+      <ul id='dropdown' class='dropdown-content'>
         <li><a class="login">Log In</a></li>
         <li class="divider"></li>
         <li><a class="create">Create Account</a></li>
@@ -31,68 +32,52 @@
         <li><a href="#!">En Espa&#241;ol</a></li>
       </ul>
     </div>
-
   </nav>
-  <main>
-  <div class="cardDiv"></div>
-  <div class="cardData">hi</div>
- <div class="preloader-wrapper big active">
-  <div class="spinner-layer spinner-blue-only">
-    <div class="circle-clipper left">
-      <div class="circle"></div>
-    </div><div class="gap-patch">
-      <div class="circle"></div>
-    </div><div class="circle-clipper right">
-      <div class="circle"></div>
-    </div>
-  </div>
-</div>
-    <!-- <div id="initialSearch">Initial Search</div> -->
-    <div class="tripContainer">
 
-    </div>
-    <div class="search-location" class="">
-      <input id="input-search-location" type="text" name="" value="" required placeholder="Location">
+  <main>
+    <div id="search-location" class="">Search Location
+      <input id="input-search-location" type="text" name="" value="">
     </div>
     <!-- <div id="input-name" class="">name
       <input id="input-first-name" type="text" name="" value="">
     </div> -->
-    <div class="search-activity" class="">
-      <input id="input-search-activity" type="text" name="" value="" placeholder="activity">
-
+    <div id="search-activity" class="">Search Activity
+      <input id="input-search-activity" type="text" name="" value="">
       <a href="tripCards.html"></a>
     </div>
-    <img id="main-pic" src="image/background3.png" alt="">
+    
+    <img id="main-pic" src="image/newyork.jpg" alt="New York Skyline">
   </main>
-  <footer id="footer" class="#000000 black" class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div id="the-f-team" class="col l6 s12">
-          <h5 class="white-text">The Fantastic Team</h5>
-          <p class="grey-text text-lighten-4">
-            </i>
-          </p>
+
+  <footer id="footer" class="page-footer white">
+    <div class="f-div container">
+      <div class="f-div-sub row">
+        <div id="the-f-team" class="col l6">
+          <h5 class="grey-text">
+            Copyright &#x24B8;
+            <script type="text/javascript">
+            var d = new Date()
+            document.write(d.getFullYear())
+            </script>
+            Fantastic Five
+          </h5>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text"></h5>
+        <div class="col l4 offset-l2">
           <ul id="list-team">
             <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kylereubendale"><img id="team" src="./image/Kyle.jpg" alt=""> Kyle</a></li><br>
             <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/joshnsaunders/"><img id="team" src="./image/Josh.jpg" alt="">Josh</a></li><br>
             <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/samuel-conner/"><img id="team" src="./image/Sam.jpg" alt="">Sam</a></li><br>
             <li><a class="text" class="grcey-text text-lighten-3" href="https://www.linkedin.com/in/eddy-caldas/"><img id="team" src="./image/Eddy.jpg" alt="">Eddy</a></li><br>
-            <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/chrisewhite/"><img id="team" src="./image/Chris.jpg" alt="">Chris</a></li><br>
+            <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/chrisewhite/"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAOaAAAAJGI4MTgxYTY2LWQ1MmQtNDA4OC04NDRjLTA3OGI1YjllYWExZQ.jpg" alt="">Chris</a></li><br>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-        <a class="grey-text text-lighten-4 right" href="#!"></a>
-      </div>
-    </div>
   </footer>
+
   <script id="entry-template" type="text/x-handlebars-template">
     {{#each businesses}}
+
 
     <div class="row">
     <div class="col s12 m3">
@@ -110,6 +95,7 @@
   </div>
   {{/each}}
 </script>
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
