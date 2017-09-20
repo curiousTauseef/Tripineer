@@ -10,10 +10,24 @@ var activity = require('./routes/activity')
 var trip = require('./routes/trip')
 var tripineer_user = require('./routes/tripineer_user')
 
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
 
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+      res.send(200);
+    }
+    else {
+      next();
+    }
+};
+
+
+app.use(cors(allowCrossDomain))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(cors())
 app.use(activity)
 app.use(trip)
 app.use(tripineer_user)
