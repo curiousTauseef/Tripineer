@@ -61,12 +61,12 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
 
     }
     $('.search-location').css({
-      'top': '1%',
-      'left': '5%',
+      'top': '1.5%',
+      'left': '30%',
     })
     $('.search-activity').css({
-      'top': '1%',
-      'left': '25%',
+      'top': '1.5%',
+      'left': '50%',
     })
     $('#input-search-activity').val('')
     $('#input-search-location').val('')

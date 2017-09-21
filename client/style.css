@@ -22,23 +22,23 @@ display: flex;
 #the-f-team {
   padding-top: 30px;
 }
-#search-location {
+.search-activity {
   position: absolute;
   top: 40%;
   left:60%;
 }
-#search-activity {
+.search-location {
   position: absolute;
   top: 40%;
   left:20%;
 }
 #input-search-activity {
-  border: 1px solid gray;
-  border-radius: 10px;
+  border-bottom: 1px solid lightgray;
+  /*border-radius: 10px;*/
 }
 #input-search-location {
-  border: 1px solid gray;
-  border-radius: 10px;
+  border-bottom: 1px solid lightgray;
+  /*border-radius: 10px;*/
 }
 #input-name {
   position: absolute;
