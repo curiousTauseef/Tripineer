@@ -1,7 +1,7 @@
 const AuthKey = "Bearer 2Ly-4eOWIdU0p6M65l1EB_1jNjNgqIDf4XD9Vmmw727kvqIcrlYAQON-D6t7pCAhmMVsh1No-X3FyCbbdsIgcT65lyYEcpNqycJKvTShp-1xjITEhxZOiWKLLei_WXYx"
 const url = "https://api.yelp.com/v3/"
 const corsURL = "https://cors-anywhere.herokuapp.com/"
-const apiURL = "https://evening-dawn-29918.herokuapp.com"
+const apiURL = "https://evening-dawn-29918.herokuapp.com/"
 // import userProfile from './auth.js'
 
 $(() => {
@@ -55,6 +55,19 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
             var rating = $(this).attr("data-rating")
             var image = $(this).attr("data-img")
             console.log(name, rating, image)
+
+            const cardData = {
+              'name': name,
+              'rating':rating,
+              'image_url':image,
+            }
+
+            $.post(apiURL + 'activity', cardData)
+              .then(result => {
+                console.log(result);
+              })
+
+
           })
         }
       })

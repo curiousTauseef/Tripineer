@@ -18,7 +18,7 @@ router.get('/activity/:id', function(request, response){
 })
 
 router.post('/activity', function(request, response){
-  database()
+  database('activity')
   .insert(request.body)
   .then(function(data){
     console.log(data);
