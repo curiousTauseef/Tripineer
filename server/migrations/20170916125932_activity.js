@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.varchar('rating')
     table.varchar('image_url')
     table.integer('trip_id')
-      .references('trip.id')
+      .references('trip.user_id')
       .onDelete('CASCADE')
   })
 };

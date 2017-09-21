@@ -127,7 +127,7 @@ window.addEventListener('load', function() {
           })
           $.get('https://evening-dawn-29918.herokuapp.com/trip/' + globalID)
             .then(function(data) {
-              for (var i = 0; i < 5; i++) {
+              for (var i = 0; i < data.length; i++) {
                 $('#createdTrips').append(
 
                   '<div class="tripLink">' + data[i].id + '</div>'
@@ -150,7 +150,7 @@ window.addEventListener('load', function() {
                   'height': '10px !important',
                 })
 
-                $.get('https://evening-dawn-29918.herokuapp.com/trip')
+                $.get('https://evening-dawn-29918.herokuapp.com/activity')
               })
             })
 
