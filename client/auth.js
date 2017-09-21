@@ -29,8 +29,7 @@ window.addEventListener('load', function() {
 
   function logout() {
     localStorage.clear()
-    document.getElementById('lblUserName').innerHTML= "&#160;"
-    document.getElementById('userImage').innerHTML= "&#160;"
+    document.getElementById('userImage').innerHTML = "&#160;"
     alert("Thanks for logging out!")
   }
 
@@ -61,7 +60,7 @@ window.addEventListener('load', function() {
       } else if (err) {
         console.log(err);
         alert(
-          'Error: ' + err.error + '. Check the console for further details.'
+          'Something went wrong, try logging in again.'
         );
       }
     });
@@ -87,9 +86,53 @@ window.addEventListener('load', function() {
   function displayProfile() {
     // display the profile
     console.log(userProfile)
-    document.getElementById('lblUserName').innerHTML= "Hello, " + userProfile.name
-    document.getElementById('userImage').innerHTML= "<img class='image-circle' src='" + userProfile.picture + "'>"
-  }
+    document.getElementById('userImage').innerHTML= "<img class='image-circle' src='" + userProfile.picture + "'>" + "Hello, " + userProfile.given_name
 
-   handleAuthentication();
+    var firstName = userProfile.given_name
+    var lastName = userProfile.family_name
+    var email = userProfile.email
+    var username = userProfile.nickname
+
+    const tripineerUser = {
+      'first_name': firstName,
+      'last_name': lastName,
+      'email': email,
+      'username': username
+    }
+    console.log(tripineerUser);
+    var emailArray = []
+    $.get('https://evening-dawn-29918.herokuapp.com/' + 'tripineer_user')
+      .then(function(data) {
+        // console.log(data);
+        // email = email.toString()
+        // console.log(typeof email);
+        for (var i = 0; i < data.length; i++) {
+          emailArray.push(data[i]["email"])
+        }
+
+
+    if (emailArray.some(x => email === x)) {
+      console.log("you exist");
+      // console.log('you exist');
+    } else {
+      console.log("you don't exist");
+      $.post('https://evening-dawn-29918.herokuapp.com/' + 'tripineer_user/', tripineerUser)
+        .then(result => {
+          console.log(result);
+        })
+    }
+  })
+}
+
+  handleAuthentication();
+
 });
+
+// for (var i = 0; i < data.length; i++) {
+//   if (email === data[i]["email"]) {
+//     console.log("your account exists already");
+//   } else {
+
+//   }
+//   console.log(data[i]["email"]);
+// }
