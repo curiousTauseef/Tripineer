@@ -11,7 +11,7 @@ router.get('/trip' ,function(request, response){
 
 router.get('/trip/:id', function(request, response){
   let id = request.params.id;
-  database('trip').select().where('id', id)
+  database('trip').select().where('user_id', id)
     .then(function(data){
       response.json(data)
     })

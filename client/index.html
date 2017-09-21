@@ -37,7 +37,8 @@
     </div>
   </nav>
   <main>
-
+    <div id="createdTrips">
+    </div>
     <div class="tripContainer">
     </div>
     <div class="search-location">
@@ -84,10 +85,10 @@
       </div>
       <div class="col l4 offset-l2">
         <ul id="list-team">
-          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kylereubendale"><img id="team" src="./image/Kyle.jpg" alt=""> Kyle</a></li><br>
-          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/joshnsaunders/"><img id="team" src="./image/Josh.jpg" alt="">Josh</a></li><br>
-          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/samuel-conner/"><img id="team" src="./image/Sam.jpg" alt="">Sam</a></li><br>
-          <li><a class="text" class="grcey-text text-lighten-3" href="https://www.linkedin.com/in/eddy-caldas/"><img id="team" src="./image/Eddy.jpg" alt="">Eddy</a></li><br>
+          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kylereubendale"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAu6AAAAJDkzYzYyNzg4LTZmOGMtNDY4NC1iNGIzLWEwMWE0ZjcwMzViYw.jpg" alt=""> Kyle</a></li><br>
+          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/joshnsaunders/"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAnQAAAAJGUyM2JlYzFhLTkwZDEtNGQ4YS1iMmJmLWRiYTM0NDkyY2E0Mg.jpg" alt="">Josh</a></li><br>
+          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/samuel-conner/"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAqyAAAAJGI5N2U3ODkzLTc3ZTAtNDQ0ZS1iZTE0LThjZDBlNjU5ZmYyMw.jpg" alt="">Sam</a></li><br>
+          <li><a class="text" class="grcey-text text-lighten-3" href="https://www.linkedin.com/in/eddy-caldas/"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAsyAAAAJDAzMjIxMmI1LTdmMGMtNDE1ZS1hNzBkLWQwM2M4Njg5MTNmMg.jpg" alt="">Eddy</a></li><br>
           <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/chrisewhite/"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAOaAAAAJGI4MTgxYTY2LWQ1MmQtNDA4OC04NDRjLTA3OGI1YjllYWExZQ.jpg" alt="">Chris</a></li><br>
         </ul>
       </div>
@@ -98,6 +99,19 @@
 
 <script id="entry-template" type="text/x-handlebars-template">
   {{#each businesses}}
+      <div class="card blue-grey">
+        <div class="card-image">
+          <img class = "yelpImages" src="{{image_url}}">
+          <a  data-rating="{{rating}}" data-name="{{name}}" data-img="{{image_url}}"class="btn-floating halfway-fab waves-effect waves-light red tripButton"><i class="material-icons">add</i></a>
+        </div>
+        <div data="{{name}}" class="card-title white-text">{{name}}</div>
+        <div data="{{rating}}" class="card-content white-text"> Rating: {{rating}}
+        </div>
+      </div>
+  {{/each}}
+</script>
+<script id="trip-template" type="text/x-handlebars-template">
+  {{#each trips}}
       <div class="card blue-grey">
         <div class="card-image">
           <img class = "yelpImages" src="{{image_url}}">
