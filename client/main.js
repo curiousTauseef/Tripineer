@@ -1,8 +1,7 @@
 const AuthKey = "Bearer 2Ly-4eOWIdU0p6M65l1EB_1jNjNgqIDf4XD9Vmmw727kvqIcrlYAQON-D6t7pCAhmMVsh1No-X3FyCbbdsIgcT65lyYEcpNqycJKvTShp-1xjITEhxZOiWKLLei_WXYx"
 const url = "https://api.yelp.com/v3/"
 const corsURL = "https://cors-anywhere.herokuapp.com/"
-const apiURL = "https://evening-dawn-29918.herokuapp.com/"
-// import userProfile from './auth.js'
+const apiURL = "https://evening-dawn-29918.herokuapp.com"
 
 $(() => {
   console.log('jQuery is connected!!!!!');
@@ -45,8 +44,8 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
           var template = Handlebars.compile(source);
           var context = {businesses: yelpData};
           var html = template(context);
-
-          $('.tripContainer').append(html)
+          $('#main-pic').hide()
+          $('.tripContainer').prepend(html)
           $('.tripButton').on("click", function(event){
             event.preventDefault();
             // alert("click worked")
@@ -54,15 +53,15 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
             var name = $(this).attr("data-name")
             var rating = $(this).attr("data-rating")
             var image = $(this).attr("data-img")
-            console.log(name, rating, image)
+          //  console.log(name, rating, image)
 
             const cardData = {
               'name': name,
               'rating':rating,
               'image_url':image,
             }
-
-            $.post(apiURL + 'activity', cardData)
+            console.log(cardData);
+            $.post('https://evening-dawn-29918.herokuapp.com/activity', cardData)
               .then(result => {
                 console.log(result);
               })
@@ -76,10 +75,15 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
     $('.search-location').css({
       'top': '1.5%',
       'left': '30%',
+      'height':'10px !important',
     })
     $('.search-activity').css({
       'top': '1.5%',
       'left': '50%',
+      'height':'10px !important',
+    })
+    $('nav').css({
+      'margin-bottom':'20px',
     })
     $('#input-search-activity').val('')
     $('#input-search-location').val('')
