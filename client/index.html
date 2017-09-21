@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Tripineer</title>
+  <title>Local Host</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,8 +18,9 @@
         <div class="buttonDiv col s1 left">
           <a class='dropdown-button btn orange lighten-1' data-activates='dropdown'><i class="material-icons">dehaze</i></a>
         </div>
-        <div class="col s7 imgDiv" id="userImage">&#160;</div>
-        <div class="col s4 logo">&#160;</div>
+        <div class="col s5 imgDiv" id="userImage">&#160;</div>
+        <!-- <div class="col s2" id="tripButton"><i class="material-icons">add</i></div> -->
+        <div class="col s5 logo">&#160;</div>
 
       </div>
       <ul id='dropdown' class='dropdown-content'>
@@ -35,18 +36,17 @@
   </nav>
 
   <main>
-    <div id="search-location" class="">Search Location
-      <input id="input-search-location" type="text" name="" value="">
+    <div class="tripContainer">
     </div>
-    <!-- <div id="input-name" class="">name
-      <input id="input-first-name" type="text" name="" value="">
-    </div> -->
-    <div id="search-activity" class="">Search Activity
-      <input id="input-search-activity" type="text" name="" value="">
+    <div class="search-location">
+      <input id="input-search-location" type="text" name="" value="" placeholder="Location">
+    </div>
+    <div class="search-activity">
+      <input id="input-search-activity" type="text" name="" value="" placeholder="Activity">
       <a href="tripCards.html"></a>
     </div>
-    
-    <img id="main-pic" src="image/newyork.jpg" alt="New York Skyline">
+
+    <div id="main-pic" alt="New York Skyline"></div>
   </main>
 
   <footer id="footer" class="page-footer white">
@@ -76,11 +76,12 @@
   </footer>
 
   <script id="entry-template" type="text/x-handlebars-template">
-    {{#each businesses}}
 
 
-    <div class="row">
-    <div class="col s12 m3">
+
+    <!-- <div class="row infoCards"> -->
+      {{#each businesses}}
+    <!-- <div class="col s12 m3"> -->
       <div class="card blue-grey">
         <div class="card-image">
           <img class = "yelpImages" src="{{image_url}}">
@@ -91,8 +92,8 @@
         <div data="{{rating}}" class="card-content white-text"> Rating: {{rating}}
         </div>
       </div>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
   {{/each}}
 </script>
 
