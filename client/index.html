@@ -5,22 +5,25 @@
   <title>Local Host</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="style.css" media="screen,projection" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
+
   <nav class="white">
     <div class="nav-wrapper">
       <div class="row top-bar">
         <div class="buttonDiv col s1 left">
           <a class='dropdown-button btn orange lighten-1' data-activates='dropdown'><i class="material-icons">dehaze</i></a>
         </div>
-        <div class="col s5 imgDiv" id="userImage">&#160;</div>
-        <!-- <div class="col s2" id="tripButton"><i class="material-icons">add</i></div> -->
-        <div class="col s5 logo">&#160;</div>
+
+        <div class="col s7 imgDiv" id="userImage">
+          &#160;
+        </div>
+        <div class="col s4 logo">&#160;</div>
 
       </div>
       <ul id='dropdown' class='dropdown-content'>
@@ -34,8 +37,8 @@
       </ul>
     </div>
   </nav>
-
   <main>
+
     <div class="tripContainer">
     </div>
     <div class="search-location">
@@ -47,64 +50,75 @@
     </div>
 
     <div id="main-pic" alt="New York Skyline"></div>
-  </main>
 
-  <footer id="footer" class="page-footer white">
-    <div class="f-div container">
-      <div class="f-div-sub row">
-        <div id="the-f-team" class="col l6">
-          <h5 class="grey-text">
-            Copyright &#x24B8;
-            <script type="text/javascript">
-            var d = new Date()
-            document.write(d.getFullYear())
-            </script>
-            Fantastic Five
-          </h5>
+
+ <div class="row main">
+      <!--search bar div-->
+      <div class="search-bar offset-s4 col s4 left">
+  
+        <div class="inputs left col s6">
+          <input placeholder="Enter your destination!" id="input-search-activity" type="text">
         </div>
-        <div class="col l4 offset-l2">
-          <ul id="list-team">
-            <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kylereubendale"><img id="team" src="./image/Kyle.jpg" alt=""> Kyle</a></li><br>
-            <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/joshnsaunders/"><img id="team" src="./image/Josh.jpg" alt="">Josh</a></li><br>
-            <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/samuel-conner/"><img id="team" src="./image/Sam.jpg" alt="">Sam</a></li><br>
-            <li><a class="text" class="grcey-text text-lighten-3" href="https://www.linkedin.com/in/eddy-caldas/"><img id="team" src="./image/Eddy.jpg" alt="">Eddy</a></li><br>
-            <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/chrisewhite/"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAOaAAAAJGI4MTgxYTY2LWQ1MmQtNDA4OC04NDRjLTA3OGI1YjllYWExZQ.jpg" alt="">Chris</a></li><br>
-          </ul>
+        <div class="inputs left col s6">
+          <input placeholder="Favorite activities!" id="input-search-location" type="text">
+          <a href="tripCards.html"></a>
         </div>
+
+      </div>
+
+</div>
+
+</main>
+
+<footer id="footer" class="page-footer white">
+  <div class="f-div container">
+    <div class="f-div-sub row">
+      <div id="the-f-team" class="col l6">
+        <h5 class="grey-text">
+          Copyright &#x24B8;
+          <script type="text/javascript">
+          var d = new Date()
+          document.write(d.getFullYear())
+          </script>
+          Fantastic Five
+        </h5>
+      </div>
+      <div class="col l4 offset-l2">
+        <ul id="list-team">
+          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kylereubendale"><img id="team" src="./image/Kyle.jpg" alt=""> Kyle</a></li><br>
+          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/joshnsaunders/"><img id="team" src="./image/Josh.jpg" alt="">Josh</a></li><br>
+          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/samuel-conner/"><img id="team" src="./image/Sam.jpg" alt="">Sam</a></li><br>
+          <li><a class="text" class="grcey-text text-lighten-3" href="https://www.linkedin.com/in/eddy-caldas/"><img id="team" src="./image/Eddy.jpg" alt="">Eddy</a></li><br>
+          <li><a class="text" class="grey-text text-lighten-3" href="https://www.linkedin.com/in/chrisewhite/"><img id="team" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAOaAAAAJGI4MTgxYTY2LWQ1MmQtNDA4OC04NDRjLTA3OGI1YjllYWExZQ.jpg" alt="">Chris</a></li><br>
+        </ul>
       </div>
     </div>
-  </footer>
-
-  <script id="entry-template" type="text/x-handlebars-template">
-
+  </div>
+</footer>
 
 
-    <!-- <div class="row infoCards"> -->
-      {{#each businesses}}
-    <!-- <div class="col s12 m3"> -->
+<script id="entry-template" type="text/x-handlebars-template">
+  {{#each businesses}}
       <div class="card blue-grey">
         <div class="card-image">
           <img class = "yelpImages" src="{{image_url}}">
-          <!-- <span class="card-title">{{name}}</span> -->
           <a  data-rating="{{rating}}" data-name="{{name}}" data-img="{{image_url}}"class="btn-floating halfway-fab waves-effect waves-light red tripButton"><i class="material-icons">add</i></a>
         </div>
         <div data="{{name}}" class="card-title white-text">{{name}}</div>
         <div data="{{rating}}" class="card-content white-text"> Rating: {{rating}}
         </div>
       </div>
-    <!-- </div> -->
-  <!-- </div> -->
   {{/each}}
 </script>
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="https://cdn.auth0.com/js/lock/10.20.0/lock.min.js"></script>
-  <script src="https://cdn.auth0.com/js/auth0/8.9/auth0.min.js"></script>
-  <script type="text/javascript" src="auth0variables.js"></script>
-  <script type="text/javascript" src="auth.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://cdn.auth0.com/js/lock/10.20.0/lock.min.js"></script>
+<script src="https://cdn.auth0.com/js/auth0/8.9/auth0.min.js"></script>
+<script type="text/javascript" src="auth0variables.js"></script>
+<script type="text/javascript" src="auth.js"></script>
+<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
