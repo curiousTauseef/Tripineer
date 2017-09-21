@@ -9,9 +9,9 @@ router.get('/tripineer_user' ,function(request, response){
     })
 })
 
-router.get('/tripineer_user/:id', function(request, response){
-  let id = request.params.id;
-  database('tripineer_user').select().where('id', id)
+router.get('/tripineer_user/:email', function(request, response){
+  let id = request.params.email;
+  database('tripineer_user').select().where('email', email)
     .then(function(data){
       response.json(data)
     })

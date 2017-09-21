@@ -35,21 +35,22 @@ display: flex;
   left:20%;
 }
 #input-search-activity {
-
   background-color: white;
-  border: 2px solid #D3D3D3;
-  border-radius: 30px;
-  height: 22px;
-  text-align: center;
+  border-bottom: 2px solid black;
+  border-radius: 5px;
+  height: 45px;
+  text-align: left;
   margin-bottom: 2px;
+  font-size:1.3em;
 }
 #input-search-location {
   background-color: white;
-  border: 2px solid #D3D3D3;
-  border-radius: 30px;
-  height: 22px;
-  text-align: center;
+  border-bottom: 2px solid black;
+  border-radius: 5px;
+  height: 45px;
+  text-align: left;
   margin-bottom: 2px;
+  font-size: 1.3em;
 }
 #input-name {
   position: absolute;
@@ -105,7 +106,7 @@ display: flex;
 .logo {
   background-image: url(image/localhostLogoUpdate.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
 }
 .yelpImages{
   position: absolute;
@@ -147,7 +148,8 @@ display: flex;
   padding: 0px;
 }
 ::-webkit-input-placeholder {
-  color: black;
+  font-size:1.2em;
+  color: gray;
   font-weight: 900;
 }
 .main {
@@ -155,8 +157,8 @@ display: flex;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 810px;
-
-.card{
+}
+.card {
   width:30%;
   height:400px;
   margin-left:50px;

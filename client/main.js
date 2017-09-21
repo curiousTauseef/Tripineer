@@ -72,6 +72,10 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
       })
 
     }
+    $('main').css({
+      'height':'600px',
+      'width':'100%'
+    })
     $('.search-location').css({
       'top': '1.5%',
       'left': '30%',
@@ -88,10 +92,9 @@ $("#input-search-activity, #input-search-location").keyup(function(event) {
     $('#input-search-activity').val('')
     $('#input-search-location').val('')
 }
-
-
-
 });
+
+
 
 
 // console.log("almost there")
