@@ -124,7 +124,8 @@ window.addEventListener('load', function() {
           $('#createdTrips').css({
             "display": "flex",
             "height": "50px",
-            "background-color": "lightblue",
+            "background-color": "white",
+            "font-size":'1.5em'
           })
 
           // $.get('https://evening-dawn-29918.herokuapp.com/tripineer_user/' + email)
@@ -200,7 +201,7 @@ window.addEventListener('load', function() {
                 'width': '100%'
               })
               $('main').css({
-                'height': '600px',
+                'height': '100%',
                 'width': '100%'
               })
               $('.search-location').css({
@@ -326,7 +327,7 @@ window.addEventListener('load', function() {
         })
       }
       $('main').css({
-        'height': '600px',
+        'height': '100%',
         'width': '100%'
       })
       $('.search-location').css({

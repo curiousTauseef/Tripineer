@@ -22,7 +22,7 @@ display: flex;
   background-image:url("./image/newyork.jpg")
 }
 #the-f-team {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 .search-activity {
   position: absolute;
@@ -83,9 +83,11 @@ display: flex;
   padding: 0px;
 }
 #footer {
+  display: block;
   margin: 0px;
   padding: 0px;
   border: 0px;
+  width: 100%;
 }
 .f-div {
   padding: 0px;
@@ -96,8 +98,8 @@ display: flex;
   padding: 0px;
   border: 0px;
 }
-.dropdown-button {
-  height: 50px;
+.dropdown-button.btn.orange.lighten-1 {
+  height: 60px;
   width: 120px;
 }
 .buttonDiv.col.s1.left {
@@ -113,6 +115,7 @@ display: flex;
   top:20px;
   max-width: 575px;
   max-height: 250px;
+  min-height: 250px;
   object-fit:fill;
 }
 .card-title{
@@ -160,7 +163,7 @@ display: flex;
   min-height: 810px;
 }
 .card {
-  width:30%;
+  width:20%;
   height:400px;
   margin-left:50px;
   float:left;
@@ -177,7 +180,17 @@ nav{
   align-items:center;
   width:100%;
   justify-content: space-around;
+  border:1px solid lightgray;
 }
 .tripLink{
   width:auto;
+}
+
+.tripContainer{
+  display: inline-block;
+
+}
+.footerContainer{
+  width: 100%;
+  display: inline-block;
 }
