@@ -2,6 +2,7 @@ window.addEventListener('load', function() {
 
   var globalTripineer = [];
   var globalID = [];
+  var realIDGlobal = [];
 
   var webAuth = new auth0.WebAuth({
     domain: AUTH0_DOMAIN,
@@ -125,51 +126,117 @@ window.addEventListener('load', function() {
             "height": "50px",
             "background-color": "lightblue",
           })
-          $.get('https://evening-dawn-29918.herokuapp.com/trip/' + globalID)
-            .then(function(data) {
-              for (var i = 0; i < data.length; i++) {
-                $('#createdTrips').append(
 
-                  '<div class="tripLink">' + data[i].id + '</div>'
-                )
-              }
-              $('.tripLink').on('click', function(event){
-                event.preventDefault()
-                $('main').css({
-                  'height': '600px',
-                  'width': '100%'
-                })
-                $('.search-location').css({
-                  'top': '1.5%',
-                  'left': '30%',
-                  'height': '10px !important',
-                })
-                $('.search-activity').css({
-                  'top': '1.5%',
-                  'left': '50%',
-                  'height': '10px !important',
-                })
+          // $.get('https://evening-dawn-29918.herokuapp.com/tripineer_user/' + email)
+          // .then(function(data){
+          //   console.log(data)
+          //   var realID = data[0].id;
+          //   realIDGlobal.push(realID)
+          // })
 
-                $.get('https://evening-dawn-29918.herokuapp.com/activity')
-              })
-            })
+          console.log(realIDGlobal[0])
+          // $.get('https://evening-dawn-29918.herokuapp.com/trip/' + realIDGlobal)
+          //   .then(function(data) {
+          //     console.log(data)
+          //     for (var i = 0; i < data.length; i++) {
+          //       $('#createdTrips').append(
+          //
+          //         '<div class="tripLink" data-tripID="'+ data[i].id + '">' + data[i].id + '</div>'
+          //       )
+          //     }
+          //     $('.tripLink').on('click', function(event){
+          //       event.preventDefault()
+          //       $('main').css({
+          //         'height': '600px',
+          //         'width': '100%'
+          //       })
+          //       $('.search-location').css({
+          //         'top': '1.5%',
+          //         'left': '30%',
+          //         'height': '10px !important',
+          //       })
+          //       $('.search-activity').css({
+          //         'top': '1.5%',
+          //         'left': '50%',
+          //         'height': '10px !important',
+          //       })
+          //
+          //       $.get('https://evening-dawn-29918.herokuapp.com/activity')
+          //     })
+          //   })
 
 
           // console.log('you exist');
         } else {
           console.log("you don't exist");
-          $.post('https://evening-dawn-29918.herokuapp.com/' + 'tripineer_user/', tripineerUser)
+          $.post('https://evening-dawn-29918.herokuapp.com/tripineer_user/', tripineerUser)
             .then(result => {
               console.log(result);
             })
         }
+        //-------------
+        $.get('https://evening-dawn-29918.herokuapp.com/tripineer_user/' + email)
+        .then(function(data){
+          console.log(data)
+          var realID = data[0].id;
+          realIDGlobal.push(realID)
+        })
+
+        var realIDLocal = realIDGlobal[0];
+        $.get('https://evening-dawn-29918.herokuapp.com/trip/' + 4)
+          .then(function(data) {
+            console.log(data)
+            for (var i = 0; i < data.length; i++) {
+              $('#createdTrips').append(
+
+                '<div class="tripLink" data-tripID="'+ data[i].id + '">' + data[i].id + '</div>'
+              )
+            }
+            $('.tripLink').on('click', function(event){
+              event.preventDefault()
+              $('#main-pic').css({
+                'display': 'none',
+                'height': '600px',
+                'width': '100%'
+              })
+              $('main').css({
+                'height': '600px',
+                'width': '100%'
+              })
+              $('.search-location').css({
+                'top': '1.5%',
+                'left': '30%',
+                'height': '10px !important',
+              })
+              $('.search-activity').css({
+                'top': '1.5%',
+                'left': '50%',
+                'height': '10px !important',
+              })
+
+              $.get('https://evening-dawn-29918.herokuapp.com/activity/' + 4)
+              .then(function(data){
+                var activityData = data;
+                console.log(activityData)
+                var source = $("#trip-template").html();
+                var template = Handlebars.compile(source);
+                var context = {
+                  trips: activityData
+                };
+                var html = template(context);
+                $('.activityContainer').prepend(html)
+              })
+            })
+          })
+
+        //--------------
       })
     $.get('https://evening-dawn-29918.herokuapp.com/tripineer_user/' + email)
       .then(function(data) {
         console.log(data)
         var myid = data[0].id;
         globalID.push(myid);
-        console.log(myid)
+        console.log("push", myid)
         $('#makeTrip').click(function(event) {
           event.preventDefault()
           console.log('ive been clicked')

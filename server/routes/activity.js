@@ -11,7 +11,7 @@ router.get('/activity' ,function(request, response){
 
 router.get('/activity/:id', function(request, response){
   let id = request.params.id;
-  database('activity').select().where('id', id)
+  database('activity').select().where('trip_id', id)
     .then(function(data){
       response.json(data)
     })
