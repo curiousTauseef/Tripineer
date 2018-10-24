@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
 
   var globalTripineer = [];
   var globalID = [];
@@ -22,11 +22,11 @@ window.addEventListener('load', function() {
   var createBtn = document.getElementsByClassName('create')
   var logoutBtn = document.getElementsByClassName('logout')
 
-  loginBtn[0].addEventListener('click', function(e) {
+  loginBtn[0].addEventListener('click', function (e) {
     e.preventDefault();
     webAuth.authorize();
   });
-  createBtn[0].addEventListener('click', function(e) {
+  createBtn[0].addEventListener('click', function (e) {
     e.preventDefault();
     webAuth.authorize();
   });
@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
   }
 
   function handleAuthentication() {
-    webAuth.parseHash(function(err, authResult) {
+    webAuth.parseHash(function (err, authResult) {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         setSession(authResult);
@@ -78,7 +78,7 @@ window.addEventListener('load', function() {
       if (!accessToken) {
         console.log('Access token must exist to fetch profile');
       }
-      webAuth.client.userInfo(accessToken, function(err, profile) {
+      webAuth.client.userInfo(accessToken, function (err, profile) {
         if (profile) {
           userProfile = profile;
           displayProfile();
@@ -110,7 +110,7 @@ window.addEventListener('load', function() {
     console.log(tripineerUser);
     var emailArray = []
     $.get('https://evening-dawn-29918.herokuapp.com/' + 'tripineer_user')
-      .then(function(data) {
+      .then(function (data) {
         // console.log(data);
         // email = email.toString()
         // console.log(typeof email);
@@ -125,7 +125,7 @@ window.addEventListener('load', function() {
             "display": "flex",
             "height": "50px",
             "background-color": "white",
-            "font-size":'1.5em'
+            "font-size": '1.5em'
           })
 
           // $.get('https://evening-dawn-29918.herokuapp.com/tripineer_user/' + email)
@@ -177,23 +177,23 @@ window.addEventListener('load', function() {
         }
         //-------------
         $.get('https://evening-dawn-29918.herokuapp.com/tripineer_user/' + email)
-        .then(function(data){
-          console.log(data)
-          var realID = data[0].id;
-          realIDGlobal.push(realID)
-        })
+          .then(function (data) {
+            console.log(data)
+            var realID = data[0].id;
+            realIDGlobal.push(realID)
+          })
 
         var realIDLocal = realIDGlobal[0];
         $.get('https://evening-dawn-29918.herokuapp.com/trip/' + 4)
-          .then(function(data) {
+          .then(function (data) {
             console.log(data)
             for (var i = 0; i < data.length; i++) {
               $('#createdTrips').append(
 
-                '<div class="tripLink" data-tripID="'+ data[i].id + '">' + data[i].id + '</div>'
+                '<div class="tripLink" data-tripID="' + data[i].id + '">' + data[i].id + '</div>'
               )
             }
-            $('.tripLink').on('click', function(event){
+            $('.tripLink').on('click', function (event) {
               event.preventDefault()
               $('#main-pic').css({
                 'display': 'none',
@@ -216,29 +216,29 @@ window.addEventListener('load', function() {
               })
 
               $.get('https://evening-dawn-29918.herokuapp.com/activity/' + 4)
-              .then(function(data){
-                var activityData = data;
-                console.log(activityData)
-                var source = $("#trip-template").html();
-                var template = Handlebars.compile(source);
-                var context = {
-                  trips: activityData
-                };
-                var html = template(context);
-                $('.activityContainer').prepend(html)
-              })
+                .then(function (data) {
+                  var activityData = data;
+                  console.log(activityData)
+                  var source = $("#trip-template").html();
+                  var template = Handlebars.compile(source);
+                  var context = {
+                    trips: activityData
+                  };
+                  var html = template(context);
+                  $('.activityContainer').prepend(html)
+                })
             })
           })
 
         //--------------
       })
     $.get('https://evening-dawn-29918.herokuapp.com/tripineer_user/' + email)
-      .then(function(data) {
+      .then(function (data) {
         console.log(data)
         var myid = data[0].id;
         globalID.push(myid);
         console.log("push", myid)
-        $('#makeTrip').click(function(event) {
+        $('#makeTrip').click(function (event) {
           event.preventDefault()
           console.log('ive been clicked')
           const tripCreation = {
@@ -263,7 +263,7 @@ window.addEventListener('load', function() {
   const corsURL = "https://cors-anywhere.herokuapp.com/"
   const apiURL = "https://evening-dawn-29918.herokuapp.com"
 
-  $("#input-search-activity, #input-search-location").keyup(function(event) {
+  $("#input-search-activity, #input-search-location").keyup(function (event) {
     if (event.keyCode == 13) {
       event.preventDefault();
       var locationSearch = $("#input-search-location").val();
@@ -283,7 +283,7 @@ window.addEventListener('load', function() {
             "expires_in": 641713742,
             "token_type": "Bearer"
           },
-          success: function(data) {
+          success: function (data) {
             console.log(data);
 
             var yelpData = data.businesses;
@@ -297,7 +297,7 @@ window.addEventListener('load', function() {
             var html = template(context);
             $('#main-pic').hide()
             $('.tripContainer').prepend(html)
-            $('.tripButton').on("click", function(event) {
+            $('.tripButton').on("click", function (event) {
               event.preventDefault();
 
               console.log(globalTripineer)
